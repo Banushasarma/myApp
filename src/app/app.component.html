@@ -19,8 +19,10 @@
 <app-form></app-form>
 <app-list></app-list>
 <router-outlet></router-outlet>
+<button (click)="navigateToAbout()">Go to About</button>
 <nav>
-    <a routerLink="/home" routerLinkActive="active-link">Home</a> &nbsp;
-    <a routerLink="/about" routerLinkActive="active-link">About</a> &nbsp;
-    <a routerLink="/contact" routerLinkActive="active-link">Contact</a>
+    <a routerLink="/home" routerLinkActive="active-link">Home</a> &nbsp; |
+    <a routerLink="/about" routerLinkActive="active-link">About</a> &nbsp; |
+    <a routerLink="/contact" routerLinkActive="active-link">Contact</a> &nbsp; |
+    <a routerLink="/feature" routerLinkActive="active-link">Feature</a>
 </nav>

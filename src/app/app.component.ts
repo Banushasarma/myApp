@@ -1,6 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import {
+  RouterLink,
+  RouterLinkActive,
+  RouterOutlet,
+  Router,
+  ActivatedRoute,
+} from '@angular/router';
 import { FormComponent } from './form/form.component';
 import { FormsModule } from '@angular/forms';
 import { ListComponent } from './list/list.component';
@@ -26,6 +32,10 @@ export class AppComponent implements OnInit {
   items = ['Item1', 'Item2', 'Item3', 'Item4', 'Item5', 'Item6'];
   price = 340;
   carNames: string[] = [];
+
+  constructor(private router: Router, private route: ActivatedRoute) {
+    this.router = router;
+  }
   ngOnInit() {
     this.clickCount = 0;
   }
@@ -37,5 +47,9 @@ export class AppComponent implements OnInit {
   onCarAdded(carName: string) {
     console.log(carName, 'From App');
     this.carNames.push(carName);
+  }
+
+  navigateToAbout() {
+    this.router.navigate(['/about']);
   }
 }
